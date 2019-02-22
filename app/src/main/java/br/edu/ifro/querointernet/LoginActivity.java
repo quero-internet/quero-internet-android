@@ -27,7 +27,36 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        this.twitterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, TwitterLoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        this.googlePlusBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, GooglePlusActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        this.loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
+
     }
+
 
     private void initializeComponents() {
         this.facebookBtn = findViewById(R.id.formulario_login_facebook_button);
