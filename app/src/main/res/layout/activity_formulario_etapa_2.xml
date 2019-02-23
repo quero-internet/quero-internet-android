@@ -71,7 +71,7 @@
         android:gravity="center|bottom"
         android:orientation="vertical" >
         <Button
-            android:id="@+id/activity_formulario_etapa_1_avancar"
+            android:id="@+id/activity_formulario_etapa_2_avancar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Avançar"
