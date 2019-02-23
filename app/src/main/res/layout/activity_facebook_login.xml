@@ -37,6 +37,7 @@
         android:layout_marginBottom="75dp"/>
 
     <Button
+        android:id="@+id/activity_facebook_login_button"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:background="@color/colorFacebook"

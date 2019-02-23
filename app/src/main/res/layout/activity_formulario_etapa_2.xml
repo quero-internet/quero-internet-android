@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormularioEtapa2Activity"
+    android:orientation="vertical"
+    android:layout_margin="16dp">
+    <TextView
+        android:textColor="@color/colorBlack"
+        android:textSize="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecione a velocidade desejada"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Etapa 2"/>
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Escolha uma das opções:"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"/>
+
+    <Switch
+        android:textSize="16dp"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/activity_formulario_etapa_2_opcao_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="De 1 a 4 Megas"/>
+
+    <Switch
+        android:textSize="16dp"
+        android:id="@+id/activity_formulario_etapa_2_opcao_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="De 5 a 10 Megas"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Switch
+        android:textSize="16dp"
+        android:id="@+id/activity_formulario_etapa_2_opcao_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="De 10 a 50 Megas"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Switch
+        android:textSize="16dp"
+        android:id="@+id/activity_formulario_etapa_2_opcao_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Acima de 50 Megas"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical" >
+        <Button
+            android:id="@+id/activity_formulario_etapa_1_avancar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Avançar"
+            android:background="@color/colorSuccess"
+            android:textColor="@color/colorWhite"
+            />
+    </LinearLayout>
+</LinearLayout>

@@ -6,23 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class FacebookLoginActivity extends AppCompatActivity {
-    private Button facebookButton;
+public class FormularioEtapa1Activity extends AppCompatActivity {
+
+    private Button avancarBtnEtapa1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_facebook_login);
+        setContentView(R.layout.activity_formulario_etapa_1);
 
         this.initializeComponents();
     }
 
     private void initializeComponents() {
-        facebookButton = findViewById(R.id.activity_facebook_login_button);
+        this.avancarBtnEtapa1 = findViewById(R.id.activity_formulario_etapa_1_avancar);
 
-        facebookButton.setOnClickListener(new View.OnClickListener() {
+        this.avancarBtnEtapa1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FacebookLoginActivity.this, FormularioEtapa1Activity.class));
+                startActivity(new Intent(FormularioEtapa1Activity.this, FormularioEtapa2Activity.class));
             }
         });
     }

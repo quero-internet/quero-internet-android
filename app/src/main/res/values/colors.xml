@@ -9,4 +9,5 @@
     <color name="colorGooglePlus">#DB3236</color>
     <color name="colorSuccess">#77d353</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="colorBlack">#000</color>
 </resources>

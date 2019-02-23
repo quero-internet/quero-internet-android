@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".FormularioEtapa1Activity"
+    android:layout_margin="16dp">
+
+    <TextView
+        android:textColor="@color/colorBlack"
+        android:textSize="22dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecione o tipo de acesso"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Etapa 1"/>
+
+    <TextView
+        android:textSize="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Qual plano você prefere?"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="50dp"/>
+
+    <Switch
+        android:textSize="16dp"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/activity_formulario_etapa_1_plano_residencial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Plano Residencial"/>
+
+    <Switch
+        android:textSize="16dp"
+        android:id="@+id/activity_formulario_etapa_1_plano_empresarial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Plano Empresarial"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="10dp"/>
+
+    <Switch
+        android:textSize="16dp"
+        android:id="@+id/activity_formulario_etapa_1_plano_dedicado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Plano Dedicado"
+        android:layout_margin="20dp"
+        android:layout_marginBottom="10dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1"
+        android:gravity="center|bottom"
+        android:orientation="vertical" >
+            <Button
+                android:id="@+id/activity_formulario_etapa_1_avancar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Avançar"
+                android:background="@color/colorSuccess"
+                android:textColor="@color/colorWhite"
+                />
+    </LinearLayout>
+</LinearLayout>
