@@ -1,4 +1,4 @@
-package br.edu.ifro.querointernet.Package1;
+package br.edu.ifro.querointernet.service;
 
 import android.os.AsyncTask;
 
@@ -10,7 +10,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
-public class HttpService extends AsyncTask<Void, Void, CEP> {
+import br.edu.ifro.querointernet.model.Endereco;
+
+public class HttpService extends AsyncTask<Void, Void, Endereco> {
 
     private final String cep;
 
@@ -19,12 +21,12 @@ public class HttpService extends AsyncTask<Void, Void, CEP> {
     }
 
     @Override
-    protected CEP doInBackground(Void... voids) {
+    protected Endereco doInBackground(Void... voids) {
         StringBuilder resposta = new StringBuilder();
 
         if (this.cep != null && this.cep.length() == 8) {
             try {
-                URL url = new URL("http://ws.matheuscastiglioni.com.br/ws/cep/find/" + this.cep + "/json/");
+                URL url = new URL("https://viacep.com.br/ws/" + this.cep + "/json/");
 
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("GET");
@@ -45,7 +47,7 @@ public class HttpService extends AsyncTask<Void, Void, CEP> {
             }
         }
 
-        return new Gson().fromJson(resposta.toString(), CEP.class);
+        return new Gson().fromJson(resposta.toString(), Endereco.class);
 
 
 
