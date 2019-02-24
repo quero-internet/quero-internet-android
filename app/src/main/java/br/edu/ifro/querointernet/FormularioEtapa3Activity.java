@@ -28,6 +28,9 @@ public class FormularioEtapa3Activity extends AppCompatActivity {
 
         this.initializeComponents();
 
+
+
+
         btnBuscarCep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,12 +55,16 @@ public class FormularioEtapa3Activity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        });
+        }
+
+
+
+        );
 
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(FormularioEtapa3Activity.this,FormularioConfirmacaoActivity.class);
                 SolicitacaoViabilidade solicitacaoViabilidade = (SolicitacaoViabilidade) getIntent().getSerializableExtra("etapa2");
                 Endereco endereco = new Endereco();
                 SolicitacaoViabilidadeDAO dao = new SolicitacaoViabilidadeDAO(FormularioEtapa3Activity.this);
@@ -80,8 +87,12 @@ public class FormularioEtapa3Activity extends AppCompatActivity {
                     Toast.makeText(FormularioEtapa3Activity.this, obj.toString(), Toast.LENGTH_SHORT).show();
                 }
 
+                startActivity(intent);
+
             }
-        });
+        }
+
+        );
 
     }
 
