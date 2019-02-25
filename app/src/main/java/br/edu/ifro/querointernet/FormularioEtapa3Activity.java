@@ -104,7 +104,6 @@ public class FormularioEtapa3Activity extends AppCompatActivity {
         ufField = findViewById(R.id.activity_formulario_etapa_4_uf);
         cidadeField = findViewById(R.id.activity_formulario_etapa_4_cidade);
         complementoField = findViewById(R.id.activity_formulario_etapa_4_complemento);
-
         btnBuscarCep = findViewById(R.id.activity_formulario_etapa_4_buscarCep);
         btnSalvar = findViewById(R.id.activity_formulario_etapa_4_salvar);
     }

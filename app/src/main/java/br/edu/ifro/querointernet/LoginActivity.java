@@ -1,10 +1,12 @@
 package br.edu.ifro.querointernet;
 
 import android.content.Intent;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -44,14 +46,24 @@ public class LoginActivity extends AppCompatActivity {
         this.loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, FormularioEtapa1Activity.class);
-                startActivity(intent);
+                TextInputEditText tLogin = (TextInputEditText) findViewById(R.id.formulario_login_usuario);
+                TextInputEditText tSenha = (TextInputEditText) findViewById(R.id.formulario_login_senha);
+
+                String login = tLogin.getText().toString();
+                String senha = tSenha.getText().toString();
+
+                if (login.equals("japa")&& senha.equals("123")){
+                    alert("Login realizado com sucesso");
+                    Intent intent = new Intent(LoginActivity.this, FormularioEtapa1Activity.class);
+                    startActivity(intent);
+
+
+                }else{
+                    alert("Login incorreto");
+
+                }
             }
         });
-
-
-
-
     }
 
 
@@ -60,5 +72,9 @@ public class LoginActivity extends AppCompatActivity {
         this.twitterBtn = findViewById(R.id.formulario_login_twitter_button);
         this.googlePlusBtn = findViewById(R.id.formulario_login_google_plus_button);
         this.loginBtn = findViewById(R.id.formulario_login_login_button);
+    }
+
+    private void alert (String s){
+        Toast.makeText(this,s, Toast.LENGTH_LONG).show();
     }
 }
