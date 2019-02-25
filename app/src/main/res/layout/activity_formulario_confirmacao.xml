@@ -6,24 +6,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FormularioConfirmacaoActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="16dp"
     >
 
-    <Button
-        android:id="@+id/button2"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
-        android:text="Minhas solicitações"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
-        tools:layout_editor_absoluteX="116dp" />
+        android:src="@drawable/ic_check_circle_black_250dp"
+        android:layout_marginBottom="70dp"/>
+    <Button
+        android:id="@+id/formulario_confirmacao_minhas_solicitacoes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="Minhas solicitações" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
+        android:id="@+id/formulario_confirmacao_verificar_parceiros"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Verificar nossos parceiros"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.431"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        tools:layout_editor_absoluteY="497dp" />
+        android:text="Verificar nossos parceiros" />
+
 </LinearLayout>
