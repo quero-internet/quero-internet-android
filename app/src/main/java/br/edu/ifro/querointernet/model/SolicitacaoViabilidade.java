@@ -1,6 +1,7 @@
 package br.edu.ifro.querointernet.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class SolicitacaoViabilidade implements Serializable {
     private int id;
@@ -12,6 +13,7 @@ public class SolicitacaoViabilidade implements Serializable {
     private boolean deCincoADezMB;
     private boolean deDezACinquentaMB;
     private boolean acimaDeCinquentaMB;
+    private String dataLancamento;
     private Endereco endereco;
 
     public SolicitacaoViabilidade() {
@@ -98,19 +100,16 @@ public class SolicitacaoViabilidade implements Serializable {
         this.endereco = endereco;
     }
 
+    public String getDataLancamento() {
+        return dataLancamento;
+    }
+
+    public void setDataLancamento(String dataLancamento) {
+        this.dataLancamento = dataLancamento;
+    }
+
     @Override
     public String toString() {
-        return "SolicitacaoViabilidade{" +
-                "id=" + id +
-                ", tipoTecnologia=" + tipoTecnologia +
-                ", planoResidencial=" + planoResidencial +
-                ", planoEmpresarial=" + planoEmpresarial +
-                ", planoDedicado=" + planoDedicado +
-                ", deUmAQuatroMB=" + deUmAQuatroMB +
-                ", deCincoADezMB=" + deCincoADezMB +
-                ", deDezACinquentaMB=" + deDezACinquentaMB +
-                ", acimaDeCinquentaMB=" + acimaDeCinquentaMB +
-                ", endereco=" + endereco +
-                '}';
+        return String.format("Solicitação %d%n\nDia %s", this.getId(), this.getDataLancamento());
     }
 }
