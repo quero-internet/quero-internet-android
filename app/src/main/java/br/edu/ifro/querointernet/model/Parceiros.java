@@ -33,7 +33,7 @@ public class Parceiros {
         this.telefone = telefone;
     }
 
-    public String getEndereço() {
+    public String getEndereco() {
         return endereço;
     }
 
@@ -52,5 +52,9 @@ public class Parceiros {
     @Override
     public String toString() {
         return nome;
+    }
+
+    public String getAlertDialogMessage() {
+        return String.format("> Nome: %s;\n> Telefone: %s;\n> Endereço: %s;\n> E-mail: %s;", this.getNome(), this.getTelefone(), this.getEndereco(), this.getEmail());
     }
 }

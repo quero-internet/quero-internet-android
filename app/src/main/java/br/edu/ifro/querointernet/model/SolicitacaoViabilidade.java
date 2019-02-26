@@ -112,4 +112,8 @@ public class SolicitacaoViabilidade implements Serializable {
     public String toString() {
         return String.format("Solicitação %d%n\nDia %s", this.getId(), this.getDataLancamento());
     }
+
+    public String getAlertDialogMessage() {
+        return String.format("> Plano residencial? %s;\n", this.isPlanoResidencial() ? "Sim" : "Não");
+    }
 }

@@ -23,15 +23,13 @@ public class ParceitosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parceitos);
 
-        listarParceirosView = findViewById(R.id.parceiros_listView);
-//        String [] parceiros = {"Internet 5.0",
-//                "Yume Net",
-//                "Infofibra Net",
-//                "Zé da FibraNet",
-//                "Autorizada OI",
-//                "Autorizada Claro",
-//                "Autorizada Vivo",
-//                "Autorizada Tim"};
+        this.initializeComponents();
+        this.initializeList();
+        registerForContextMenu(listarParceirosView);
+
+    }
+
+    private void initializeList() {
         List<Parceiros> lista = new ArrayList<Parceiros>();
         lista.add(new Parceiros("Internet 5.0","3321-0000"," Rua Amazonas N°351", "sememail@sememail.com"));
         lista.add(new Parceiros("Via Radio Net","3321-0000"," Rua Amazonas N°351", "sememail@sememail.com"));
@@ -44,11 +42,28 @@ public class ParceitosActivity extends AppCompatActivity {
         lista.add(new Parceiros("Autorizada Tim","3321-0000"," Rua Amazonas N°351", "sememail@sememail.com"));
         ArrayAdapter<Parceiros> adapter = new ArrayAdapter<Parceiros>(this,android.R.layout.simple_list_item_1,lista);
         listarParceirosView.setAdapter(adapter);
-
-
     }
 
-
+    private void initializeComponents() {
+        listarParceirosView = findViewById(R.id.parceiros_listView);
     }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, final ContextMenu.ContextMenuInfo menuInfo) {
+        MenuItem itemDetalhes = menu.add("Detalhes");
+
+        itemDetalhes.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                AdapterView.AdapterContextMenuInfo adapterContextMenuInfo = (AdapterView.AdapterContextMenuInfo) menuInfo;
+
+                Parceiros parceiro = (Parceiros) listarParceirosView.getItemAtPosition(adapterContextMenuInfo.position);
+
+                new AlertDialog.Builder(ParceitosActivity.this).setTitle(parceiro.getNome()).setMessage(parceiro.getAlertDialogMessage()).show();
+                return false;
+            }
+        });
+    }
+}
 
 

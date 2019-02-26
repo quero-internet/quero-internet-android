@@ -90,7 +90,6 @@ public class ListaSolicitacoesActivity extends AppCompatActivity {
                                 atualizarListView();
                             }
                         }).setNegativeButton("Não", null)
-                        .setIcon(android.R.drawable.ic_dialog_alert)
                         .show();
                 return false;
             }
@@ -105,8 +104,7 @@ public class ListaSolicitacoesActivity extends AppCompatActivity {
 
                 new AlertDialog.Builder(ListaSolicitacoesActivity.this)
                         .setTitle("Confirma o cancelamento?")
-                        .setMessage(solicitacaoViabilidade.toString())
-                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setMessage(solicitacaoViabilidade.getAlertDialogMessage())
                         .show();
 
                 return false;
