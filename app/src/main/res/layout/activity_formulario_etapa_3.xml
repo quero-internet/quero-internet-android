@@ -23,16 +23,16 @@
             android:hint="CEP"
             android:inputType="number"/>
     </android.support.design.widget.TextInputLayout>
-        <Button
-            android:background="@color/colorPrimary"
-            android:layout_height="wrap_content"
-            android:id="@+id/activity_formulario_etapa_4_buscarCep"
-            android:layout_marginBottom="10dp"
-            android:padding="10dp"
-            android:textColor="@color/colorAccent"
 
-            android:layout_width="wrap_content"
-            android:text="Buscar CEP"/>
+    <Button
+        android:id="@+id/activity_formulario_etapa_4_buscarCep"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        android:text="Buscar CEP"
+        android:textColor="@color/colorWhite" />
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -40,7 +40,6 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/activity_formulario_etapa_4_logradouro"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Logradouro"/>
@@ -52,7 +51,6 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/activity_formulario_etapa_4_numero"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Número (Digite manualmente)"/>
@@ -64,7 +62,6 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/activity_formulario_etapa_4_complemento"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Complemento"/>
@@ -76,7 +73,6 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/activity_formulario_etapa_4_bairro"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Bairro"/>
@@ -88,7 +84,6 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/activity_formulario_etapa_4_cidade"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Cidade"/>
@@ -100,10 +95,10 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/activity_formulario_etapa_4_uf"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="UF"/>
+            android:hint="UF"
+            android:layout_marginBottom="25dp"/>
     </android.support.design.widget.TextInputLayout>
     <LinearLayout
         android:layout_width="match_parent"

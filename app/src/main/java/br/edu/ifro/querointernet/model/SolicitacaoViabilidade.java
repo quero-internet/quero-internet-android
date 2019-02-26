@@ -116,11 +116,15 @@ public class SolicitacaoViabilidade implements Serializable {
     public String getAlertDialogMessage() {
         return
 //                String.format("> Plano residencial? %s;\n", this.isPlanoResidencial() ? "Sim" : "Não"   );
-
-
-
-
-                  String.format("Plano Residencial? %s;\n",this.isPlanoResidencial() ? "sim" : "Não","Plano Empresarial? %s;\n",this.isPlanoEmpresarial()? "sim" : "Não" );
+                 //     1° Residencial              2°Empresarial               3°Dedicado                  4° de 1 a 4 megas               5° de 5 a 10 megas                  6° de 10 a 50 megas                 7° Acima de 50 Megas
+    String.format(" > Plano Residencial?  %s;\n > Plano empresarial?  %s;\n > Plano dedicado?  %s;\n > Internet de 1 a 4 Megas?  %s;\n > Internet 5 a 10 Megas? %s;\n > Internet 10 a 50 Megas? %s;\n > Internet acima de 50 Megas? %s;\n",
+            this.isPlanoResidencial()? "Sim" : "Não",
+            this.isPlanoEmpresarial()? "Sim" : "Não",
+            this.isPlanoDedicado()? "Sim" : "Não",
+            this.isDeUmAQuatroMB()? "Sim" : "Não",
+            this.isDeCincoADezMB()? "Sim" : "Não",
+            this.isDeDezACinquentaMB()? "Sim" : "Não",
+            this.isAcimaDeCinquentaMB()? "Sim" : "Não");
 
     }
 }
