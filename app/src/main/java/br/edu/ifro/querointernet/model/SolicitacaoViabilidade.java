@@ -114,6 +114,13 @@ public class SolicitacaoViabilidade implements Serializable {
     }
 
     public String getAlertDialogMessage() {
-        return String.format("> Plano residencial? %s;\n", this.isPlanoResidencial() ? "Sim" : "Não");
+        return
+//                String.format("> Plano residencial? %s;\n", this.isPlanoResidencial() ? "Sim" : "Não"   );
+
+
+
+
+                  String.format("Plano Residencial? %s;\n",this.isPlanoResidencial() ? "sim" : "Não","Plano Empresarial? %s;\n",this.isPlanoEmpresarial()? "sim" : "Não" );
+
     }
 }

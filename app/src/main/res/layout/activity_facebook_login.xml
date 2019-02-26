@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FacebookLoginActivity"
+    tools:context=".GooglePlusActivity"
+    android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:layout_marginTop="55dp"
-    android:orientation="vertical">
+    android:layout_marginTop="55dp">
 
     <ImageView
         android:src="@drawable/ic_public_foreground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        />
+        android:layout_marginBottom="15dp"/>
+
     <TextView
-        android:textSize="25dp"
+        android:textSize="22dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Continuar como Quero Internet!!"
@@ -47,10 +48,13 @@
         />
 
 
+
     <TextView
         android:textSize="15dp"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:text="Isso não permite que o aplicativo publique no Facebook"
         android:gravity="center_horizontal"/>
+
+
 </LinearLayout>

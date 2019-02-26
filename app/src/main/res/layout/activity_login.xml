@@ -57,12 +57,13 @@
     <Button
         android:id="@+id/formulario_login_facebook_button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login com Facebook"
-        android:background="@color/colorFacebook"
-        android:textColor="@color/colorWhite"
+        android:layout_height="54dp"
         android:layout_marginBottom="15dp"
-        />
+        android:background="@color/colorFacebook"
+        android:drawableStart="@drawable/facebook"
+        android:drawableLeft="@drawable/facebook"
+        android:text="Login com Facebook"
+        android:textColor="@color/colorWhite" />
 
     <Button
         android:id="@+id/formulario_login_twitter_button"
@@ -70,6 +71,8 @@
         android:layout_height="wrap_content"
         android:text="Login com Twitter"
         android:background="@color/colorTwitter"
+        android:drawableStart="@drawable/twitter"
+        android:drawableLeft="@drawable/twitter"
         android:textColor="@color/colorWhite"
         android:layout_marginBottom="15dp"
         />
@@ -80,6 +83,9 @@
         android:layout_height="wrap_content"
         android:text="Login com Google+"
         android:background="@color/colorGooglePlus"
+        android:drawableStart="@drawable/google_plus"
+        android:drawableLeft="@drawable/google_plus"
         android:textColor="@color/colorWhite"
+
         />
 </LinearLayout>

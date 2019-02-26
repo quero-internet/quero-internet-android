@@ -15,23 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ParceitosActivity"></activity>
-        <activity android:name=".ListaSolicitacoesActivity" />
+        <activity android:name=".ParceitosActivity" android:parentActivityName=".FormularioConfirmacaoActivity"></activity>
+        <activity android:name=".ListaSolicitacoesActivity" android:parentActivityName=".FormularioConfirmacaoActivity" />
         <activity android:name=".FormularioConfirmacaoActivity" />
-        <activity android:name=".FormularioEtapa3Activity" />
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+        <activity android:name=".FormularioEtapa3Activity" android:parentActivityName=".FormularioEtapa2Activity" />
 
-        <activity android:name=".FormularioEtapa2Activity" />
+        <activity android:name=".FormularioEtapa2Activity" android:parentActivityName=".FormularioEtapa1Activity" />
         <activity
             android:name=".GooglePlusActivity"
             android:parentActivityName=".LoginActivity" />
