@@ -7,8 +7,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import br.edu.ifro.querointernet.model.Endereco;
 import br.edu.ifro.querointernet.model.SolicitacaoViabilidade;
@@ -26,6 +29,7 @@ public class SolicitacaoViabilidadeDAO extends SQLiteOpenHelper {
         String sql = "create table " +
                 TABLE_NAME +
                 " (id integer primary key, " +
+                " dataLancamento text not null," +
                 " tipoTecnologia integer not null," +
                 " planoResidencial integer not null default 0," +
                 " planoEmpresarial integer not null default 0," +
@@ -54,6 +58,11 @@ public class SolicitacaoViabilidadeDAO extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         ContentValues dados = new ContentValues();
 
+        Locale ptBR = new Locale("pt", "BR");
+        DateFormat dateFormat =
+                DateFormat.getDateInstance(DateFormat.MEDIUM, ptBR);
+
+        dados.put("dataLancamento", dateFormat.format(new Date()));
         dados.put("tipoTecnologia", solicitacaoViabilidade.getTipoTecnologia());
         dados.put("planoResidencial", solicitacaoViabilidade.isPlanoResidencial() ? 1 : 0);
         dados.put("planoEmpresarial", solicitacaoViabilidade.isPlanoEmpresarial() ? 1 : 0);
@@ -86,6 +95,7 @@ public class SolicitacaoViabilidadeDAO extends SQLiteOpenHelper {
 
             solicitacaoViabilidade.setId(c.getInt(c.getColumnIndex("id")));
             solicitacaoViabilidade.setTipoTecnologia(c.getInt(c.getColumnIndex("tipoTecnologia")));
+            solicitacaoViabilidade.setDataLancamento(c.getString(c.getColumnIndex("dataLancamento")));
             solicitacaoViabilidade.setPlanoResidencial(c.getInt(c.getColumnIndex("planoResidencial")) == 1 ? true : false);
             solicitacaoViabilidade.setPlanoEmpresarial(c.getInt(c.getColumnIndex("planoEmpresarial")) == 1 ? true : false);
             solicitacaoViabilidade.setPlanoDedicado(c.getInt(c.getColumnIndex("planoDedicado")) == 1 ? true : false);
