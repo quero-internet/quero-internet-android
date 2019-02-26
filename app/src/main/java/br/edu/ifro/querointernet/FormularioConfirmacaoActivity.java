@@ -32,6 +32,7 @@ public class FormularioConfirmacaoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(FormularioConfirmacaoActivity.this, "Nossos parceiros são demais!!", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(FormularioConfirmacaoActivity.this,ParceitosActivity.class));
             }
         });
     }

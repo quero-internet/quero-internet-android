@@ -40,7 +40,7 @@ public class FormularioEtapa1Activity extends AppCompatActivity {
         spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTiposTecnologia.setAdapter(spinnerArrayAdapter);
 
-        spinnerTiposTecnologia.setSelection(2);
+
 
         //Ação da botão avançar
         this.avancarBtnEtapa1 = findViewById(R.id.activity_formulario_etapa_1_avancar);

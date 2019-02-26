@@ -84,7 +84,7 @@ public class FormularioEtapa3Activity extends AppCompatActivity {
                 List<SolicitacaoViabilidade> lista = dao.listar();
 
                 for (SolicitacaoViabilidade obj : lista){
-                    Toast.makeText(FormularioEtapa3Activity.this, obj.toString(), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(FormularioEtapa3Activity.this, obj.toString(), Toast.LENGTH_SHORT).show();
                 }
 
                 startActivity(intent);
