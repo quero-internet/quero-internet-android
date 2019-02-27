@@ -15,12 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ParceitosActivity" android:parentActivityName=".FormularioConfirmacaoActivity"></activity>
-        <activity android:name=".ListaSolicitacoesActivity" android:parentActivityName=".FormularioConfirmacaoActivity" />
-        <activity android:name=".FormularioConfirmacaoActivity" />
-        <activity android:name=".FormularioEtapa3Activity" android:parentActivityName=".FormularioEtapa2Activity" />
+        <activity android:label="Parceiros" android:name=".ParceitosActivity" android:parentActivityName=".FormularioConfirmacaoActivity"></activity>
+        <activity android:label="Lista de solicitações" android:name=".ListaSolicitacoesActivity" android:parentActivityName=".FormularioConfirmacaoActivity" />
+        <activity android:label="Confirmado!" android:name=".FormularioConfirmacaoActivity" />
+        <activity android:label="Etapa 3" android:name=".FormularioEtapa3Activity" android:parentActivityName=".FormularioEtapa2Activity" />
 
-        <activity android:name=".FormularioEtapa2Activity" android:parentActivityName=".FormularioEtapa1Activity" />
+        <activity android:label="Etapa 2" android:name=".FormularioEtapa2Activity" android:parentActivityName=".FormularioEtapa1Activity" />
         <activity
             android:name=".GooglePlusActivity"
             android:parentActivityName=".LoginActivity" />
@@ -37,7 +37,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FormularioEtapa1Activity" />
+        <activity android:label="Etapa 1" android:name=".FormularioEtapa1Activity" />
     </application>
 
 </manifest>
