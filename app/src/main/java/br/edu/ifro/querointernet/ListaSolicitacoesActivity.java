@@ -103,7 +103,7 @@ public class ListaSolicitacoesActivity extends AppCompatActivity {
                 final SolicitacaoViabilidade solicitacaoViabilidade = (SolicitacaoViabilidade) listView.getItemAtPosition(adapterContextMenuInfo.position);
 
                 new AlertDialog.Builder(ListaSolicitacoesActivity.this)
-                        .setTitle("Confirma o cancelamento?")
+                        .setTitle(String.format("Solicitação - "+solicitacaoViabilidade.getId()))
                         .setMessage(solicitacaoViabilidade.getAlertDialogMessage())
                         .show();
 

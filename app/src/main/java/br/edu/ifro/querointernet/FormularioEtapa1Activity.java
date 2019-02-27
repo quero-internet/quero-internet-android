@@ -41,7 +41,6 @@ public class FormularioEtapa1Activity extends AppCompatActivity {
         spinnerTiposTecnologia.setAdapter(spinnerArrayAdapter);
 
 
-
         //Ação da botão avançar
         this.avancarBtnEtapa1 = findViewById(R.id.activity_formulario_etapa_1_avancar);
 
@@ -50,11 +49,23 @@ public class FormularioEtapa1Activity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(FormularioEtapa1Activity.this, FormularioEtapa2Activity.class);
                 SolicitacaoViabilidade solicitacao = new SolicitacaoViabilidade();
+//                Campos dessa etapa
                 solicitacao.setTipoTecnologia(spinnerTiposTecnologia.getSelectedItemPosition());
                 solicitacao.setPlanoResidencial(switchPlanoResidencial.isChecked());
                 solicitacao.setPlanoEmpresarial(switchPlanoEmpresarial.isChecked());
                 solicitacao.setPlanoDedicado(switchPlanoDedicado.isChecked());
 
+                //Validação
+                if(solicitacao.getTipoTecnologia() == 0){
+                    Toast.makeText(FormularioEtapa1Activity.this, "O tipo de tecnologia não foi selecionado", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(!(solicitacao.isPlanoResidencial() || solicitacao.isPlanoDedicado() || solicitacao.isPlanoEmpresarial())){
+                    Toast.makeText(FormularioEtapa1Activity.this, "Selecione ao menos um plano", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                
                 intent.putExtra("etapa1", solicitacao);
 
                 startActivity(intent);

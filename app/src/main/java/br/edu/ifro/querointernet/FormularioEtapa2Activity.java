@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import br.edu.ifro.querointernet.model.SolicitacaoViabilidade;
 
@@ -34,14 +35,21 @@ public class FormularioEtapa2Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(FormularioEtapa2Activity.this, FormularioEtapa3Activity.class);
-                SolicitacaoViabilidade solicitacaoViabilidade = (SolicitacaoViabilidade) getIntent().getSerializableExtra("etapa1");
+                SolicitacaoViabilidade solicitacao = (SolicitacaoViabilidade) getIntent().getSerializableExtra("etapa1");
 
-                solicitacaoViabilidade.setDeUmAQuatroMB(switchDeUmAQuatroMB.isChecked());
-                solicitacaoViabilidade.setDeCincoADezMB(switchDeCincoADezMB.isChecked());
-                solicitacaoViabilidade.setDeDezACinquentaMB(switchDeDezACinquentaMB.isChecked());
-                solicitacaoViabilidade.setAcimaDeCinquentaMB(switchAcimaDeCinquentaMB.isChecked());
+                // Dados da etapa
+                solicitacao.setDeUmAQuatroMB(switchDeUmAQuatroMB.isChecked());
+                solicitacao.setDeCincoADezMB(switchDeCincoADezMB.isChecked());
+                solicitacao.setDeDezACinquentaMB(switchDeDezACinquentaMB.isChecked());
+                solicitacao.setAcimaDeCinquentaMB(switchAcimaDeCinquentaMB.isChecked());
 
-                intent.putExtra("etapa2", solicitacaoViabilidade);
+                //Validação
+                if(!(solicitacao.isDeUmAQuatroMB() || solicitacao.isDeCincoADezMB() || solicitacao.isDeDezACinquentaMB() ||  solicitacao.isAcimaDeCinquentaMB())){
+                    Toast.makeText(FormularioEtapa2Activity.this, "Selecione ao menos uma quantidade de megas", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                intent.putExtra("etapa2", solicitacao);
                 startActivity(intent);
             }
         });

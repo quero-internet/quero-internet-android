@@ -69,6 +69,7 @@ public class FormularioEtapa3Activity extends AppCompatActivity {
                 Endereco endereco = new Endereco();
                 SolicitacaoViabilidadeDAO dao = new SolicitacaoViabilidadeDAO(FormularioEtapa3Activity.this);
 
+                //Dados da etapa
                 endereco.setCep(cepField.getText().toString().trim());
                 endereco.setUf(ufField.getText().toString().trim());
                 endereco.setLocalidade(cidadeField.getText().toString().trim());
@@ -76,16 +77,35 @@ public class FormularioEtapa3Activity extends AppCompatActivity {
                 endereco.setLogradouro(logradouroField.getText().toString().trim());
                 endereco.setComplemento(complementoField.getText().toString().trim());
                 endereco.setNumero(numeroField.getText().toString().trim());
-
                 solicitacaoViabilidade.setEndereco(endereco);
 
-                dao.inserir(solicitacaoViabilidade);
-
-                List<SolicitacaoViabilidade> lista = dao.listar();
-
-                for (SolicitacaoViabilidade obj : lista){
-//                    Toast.makeText(FormularioEtapa3Activity.this, obj.toString(), Toast.LENGTH_SHORT).show();
+                //Validação
+                if(endereco.getLogradouro() == null || endereco.getLogradouro().isEmpty()){
+                    Toast.makeText(FormularioEtapa3Activity.this, "Preencha o logradouro", Toast.LENGTH_SHORT).show();
+                    return;
                 }
+
+                if(endereco.getNumero() == null || endereco.getNumero().isEmpty()){
+                    Toast.makeText(FormularioEtapa3Activity.this, "Preencha o número", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(endereco.getBairro() == null || endereco.getBairro().isEmpty()){
+                    Toast.makeText(FormularioEtapa3Activity.this, "Preencha o bairro", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(endereco.getLocalidade() == null || endereco.getLocalidade().isEmpty()){
+                    Toast.makeText(FormularioEtapa3Activity.this, "Preencha a cidade", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if(endereco.getUf() == null || endereco.getUf().isEmpty()){
+                    Toast.makeText(FormularioEtapa3Activity.this, "Preencha a UF", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                dao.inserir(solicitacaoViabilidade);
 
                 startActivity(intent);
 
