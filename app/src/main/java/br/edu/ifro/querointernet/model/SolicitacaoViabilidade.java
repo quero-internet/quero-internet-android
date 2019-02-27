@@ -32,6 +32,25 @@ public class SolicitacaoViabilidade implements Serializable {
         return tipoTecnologia;
     }
 
+    public String getTipoTecnologiaString() {
+        switch (this.tipoTecnologia) {
+            case 0:
+                return "Nenhum";
+            case 1:
+                return "Via rádio";
+            case 2:
+                return "Fibra óptica";
+            case 3:
+                return "ADSL";
+            case 4:
+                return "Internet móvel";
+            case 5:
+                return "Todas as tecnologias";
+            default:
+                return "Nenhum";
+        }
+    }
+
     public void setTipoTecnologia(int tipoTecnologia) {
         this.tipoTecnologia = tipoTecnologia;
     }
@@ -114,17 +133,37 @@ public class SolicitacaoViabilidade implements Serializable {
     }
 
     public String getAlertDialogMessage() {
-        return
-//                String.format("> Plano residencial? %s;\n", this.isPlanoResidencial() ? "Sim" : "Não"   );
-                //     1° Residencial              2°Empresarial               3°Dedicado                  4° de 1 a 4 megas               5° de 5 a 10 megas                  6° de 10 a 50 megas                 7° Acima de 50 Megas
-                String.format(" > Plano Residencial?  %s;\n > Plano empresarial?  %s;\n > Plano dedicado?  %s;\n > Internet de 1 a 4 Megas?  %s;\n > Internet 5 a 10 Megas? %s;\n > Internet 10 a 50 Megas? %s;\n > Internet acima de 50 Megas? %s;\n",
-                        this.isPlanoResidencial()? "Sim" : "Não",
-                        this.isPlanoEmpresarial()? "Sim" : "Não",
-                        this.isPlanoDedicado()? "Sim" : "Não",
-                        this.isDeUmAQuatroMB()? "Sim" : "Não",
-                        this.isDeCincoADezMB()? "Sim" : "Não",
-                        this.isDeDezACinquentaMB()? "Sim" : "Não",
-                        this.isAcimaDeCinquentaMB()? "Sim" : "Não");
+        return String.format(" > Tipo de tecnologia: %s;" +
+                        "\n > Plano Residencial?  %s;" +
+                        "\n > Plano empresarial?  %s;" +
+                        "\n > Plano dedicado?  %s;" +
+                        "\n > Internet de 1 a 4 Megas?  %s;" +
+                        "\n > Internet 5 a 10 Megas? %s;" +
+                        "\n > Internet 10 a 50 Megas? %s;" +
+                        "\n > Internet acima de 50 Megas? %s;" +
+                        "\n > CEP: %s;" +
+                        "\n > Logradouro: %s;" +
+                        "\n > Número: %s;" +
+                        "\n > Complemento: %s;" +
+                        "\n > Bairro: %s;" +
+                        "\n > Cidade: %s;" +
+                        "\n < UF: %s.",
+                this.getTipoTecnologiaString(),
+                this.isPlanoResidencial() ? "Sim" : "Não",
+                this.isPlanoEmpresarial() ? "Sim" : "Não",
+                this.isPlanoDedicado() ? "Sim" : "Não",
+                this.isDeUmAQuatroMB() ? "Sim" : "Não",
+                this.isDeCincoADezMB() ? "Sim" : "Não",
+                this.isDeDezACinquentaMB() ? "Sim" : "Não",
+                this.isAcimaDeCinquentaMB() ? "Sim" : "Não",
+                this.getEndereco().getCep(),
+                this.getEndereco().getLogradouro(),
+                this.getEndereco().getNumero(),
+                this.getEndereco().getComplemento(),
+                this.getEndereco().getBairro(),
+                this.getEndereco().getLocalidade(),
+                this.getEndereco().getUf()
+        );
     }
 
 }

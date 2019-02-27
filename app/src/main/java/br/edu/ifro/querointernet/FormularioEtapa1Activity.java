@@ -33,7 +33,7 @@ public class FormularioEtapa1Activity extends AppCompatActivity {
         switchPlanoDedicado = findViewById(R.id.activity_formulario_etapa_1_plano_dedicado);
 
         //Itens do Spinner
-        String[] tiposTecnologia = {"Via rádio", "Fibra óptica", "ADSL", "Internet móvel", "Todas as tecnologias"};
+        String[] tiposTecnologia = {"Selecione", "Via rádio", "Fibra óptica", "ADSL", "Internet móvel", "Todas as tecnologias"};
         spinnerTiposTecnologia = findViewById(R.id.activity_formulario_etapa_1_tipos_tecnologia);
 
         ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, tiposTecnologia);
